@@ -21,9 +21,9 @@ using namespace std;
 using namespace utils;
 using json = nlohmann::json;
 
-const std::string REPO_DIR = "/home/sheng/Projects/l2_frenet_planner/";
+const std::string REPO_DIR = "/home/feiyuxiao/Desktop/Decisioncpp/l2_frenet_planner/";
 
-DEFINE_string(scene_path, REPO_DIR + "config/scenes/one_lane_slow_down.json",
+DEFINE_string(scene_path, REPO_DIR + "config/scenes/two_lanes.json",
               "Path to scene config file");
 DEFINE_string(hyper_path, REPO_DIR + "config/hyperparameters.json",
               "Path to hyperparameter config file");
