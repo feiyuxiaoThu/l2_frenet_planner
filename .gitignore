@@ -10,6 +10,7 @@ cmake-build-debug/
 *.pyc
 *.jpg
 *.bin
+.vscode
 .clang-format
 log.txt
 results/README.md

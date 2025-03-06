@@ -98,37 +98,22 @@ add_library(PackageFrenetOptimalTrajectory STATIC
 
 add_executable(FrenetOptimalTrajectoryTest
                src/main.cpp
-               src/utils/utils.cpp
-               src/utils/geometry.cpp
-               src/utils/lookup_table_1d.h
-               src/utils/coordinate_utils.cpp
-               src/utils/data_log.cpp
-               src/Polynomials/CubicPolynomial.cpp
-               src/Polynomials/CubicPolynomial.h
-               src/Polynomials/QuarticPolynomial.cpp
-               src/Polynomials/QuarticPolynomial.h
-               src/Polynomials/QuinticPolynomial.cpp
-               src/Polynomials/QuinticPolynomial.h
-               src/CubicSpline/CubicSpline1D.cpp
-               src/CubicSpline/CubicSpline1D.h
-               src/CubicSpline/CubicSpline2D.cpp
-               src/CubicSpline/CubicSpline2D.h
-               src/FrenetOptimalTrajectory/FrenetOptimalTrajectory.cpp
-               src/FrenetOptimalTrajectory/FrenetOptimalTrajectory.h
-               src/FrenetOptimalTrajectory/FrenetPath.cpp
-               src/FrenetOptimalTrajectory/FrenetPath.h
-               src/FrenetOptimalTrajectory/py_cpp_struct.h
-               src/Obstacle/Obstacle.cpp
-               src/Obstacle/Obstacle.h
-               src/Car/Car.cpp
-               src/Car/Car.h
-               src/Lane/Lane.cpp)
+               )
+
+add_executable(FrenetOptimalTrajectoryComTest
+               src/main_com.cpp
+               )
+
+
 target_link_libraries(FrenetOptimalTrajectory Eigen3::Eigen Qt5::Widgets Qt5::Gui
                       gflags ${MSGPACK_LIBRARIES})
 target_link_libraries(PackageFrenetOptimalTrajectory Eigen3::Eigen Qt5::Widgets Qt5::Gui
                       gflags ${MSGPACK_LIBRARIES})
-target_link_libraries(FrenetOptimalTrajectoryTest Eigen3::Eigen Qt5::Widgets Qt5::Gui
-                      gflags ${MSGPACK_LIBRARIES})
+#target_link_libraries(FrenetOptimalTrajectoryTest FrenetOptimalTrajectory Eigen3::Eigen Qt5::Widgets Qt5::Gui
+#                      gflags ${MSGPACK_LIBRARIES})
+
+target_link_libraries(FrenetOptimalTrajectoryTest FrenetOptimalTrajectory)
+target_link_libraries(FrenetOptimalTrajectoryComTest FrenetOptimalTrajectory)
 
 enable_testing()
 
