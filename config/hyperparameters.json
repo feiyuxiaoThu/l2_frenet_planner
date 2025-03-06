@@ -1,10 +1,10 @@
 {
     "max_speed": 25.0,
-    "max_accel": 15.0,
+    "max_accel": 5.0,
     "max_curvature": 15.0,
     "max_yaw_rate": 0.35, 
     "d_road_w": 0.5,
-    "dt": 0.1,
+    "dt": 0.2,
     "maxt": 5.0,
     "mint": 2.0,
     "t_sample_step": 0.5,
@@ -24,7 +24,7 @@
     "klat": 1.0,
     "klon": 1.0,
     "klane": 0.1,
-    "num_threads": 7,
+    "num_threads": 8, 
 
     "sensor_speed_offset": -0.1,
     "sensor_speed_noise_std": 0.1,

@@ -61,6 +61,15 @@ The view from the vehice local coordinate system is also available with candidat
 
 To enable threading, specify the number of threads you want to use for `num_threads` in `hyperparameters.json`. Setting this value to `0` disables the use of multi threading.
 
+
+### Adjustment
+
+#### c++ version standalone
+
+```
+./build/FrenetOptimalTrajectoryTest --scene_path=/home/echo/Project/l2_frenet_planner/config/scenes/multi_lanes.json --hyper_path=/home/echo/Project/l2_frenet_planner/config/hyperparameters.json --store_data=true --data_path=/home/echo/Project/l2_frenet_planner/build/data.bin --local_planning=true
+```
+
 ### Citation
 
 If you find this repository helpful or use its contents in your work, please consider citing our [paper](https://arxiv.org/abs/2309.03051).
