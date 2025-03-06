@@ -341,8 +341,9 @@ Pose EstimateChangeOfPoseV2(const Car& next_planning_state_local,
 // }
 
 int main(int argc, char** argv) {
-  gflags::ParseCommandLineFlags(&argc, &argv, true);
-
+  //gflags::ParseCommandLineFlags(&argc, &argv, true);
+  google::ParseCommandLineFlags(&argc, &argv, true);
+  
   if (!InitFrenetHyperParameters()) {
     return 1;
   }
