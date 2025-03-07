@@ -18,7 +18,7 @@ from make_gif import make_gif
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD_DIR = os.path.join(PROJECT_DIR, "build")
 CONFIG_DIR = os.path.join(PROJECT_DIR, "config")
-CPP_EXECUTABLE_PATH = os.path.join(BUILD_DIR, "FrenetOptimalTrajectoryTest")
+CPP_EXECUTABLE_PATH = os.path.join("./build", "FrenetOptimalTrajectoryTest")
 DATA_LOG_PATH = os.path.join(BUILD_DIR, "data.bin")
 
 LONMODE = ["", "Following", "VelocityKeeping"]
@@ -32,7 +32,7 @@ def wrap_angle(angle):
 def parse_arguments(): 
     parser = argparse.ArgumentParser()
     parser.add_argument('--scene_path', type=str, 
-                        default=os.path.join(CONFIG_DIR, "scenes/two_lanes.json"))
+                        default=os.path.join(CONFIG_DIR, "scenes/auto_merge.json"))
     parser.add_argument('--hyper_path', type=str, 
                         default=os.path.join(CONFIG_DIR, "hyperparameters.json"))
     parser.add_argument('--store_data', action='store_true', 

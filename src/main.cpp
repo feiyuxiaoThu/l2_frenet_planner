@@ -21,9 +21,9 @@ using namespace std;
 using namespace utils;
 using json = nlohmann::json;
 
-const std::string REPO_DIR = "/home/echo/Project/l2_frenet_planner/";
+const std::string REPO_DIR = "/home/xfy/Desktop/Hnoa-feiyu/l2_frenet_planner";
 
-DEFINE_string(scene_path, REPO_DIR + "config/scenes/slow_down.json",
+DEFINE_string(scene_path, REPO_DIR + "config/scenes/auto_merge.json",
               "Path to scene config file");
 DEFINE_string(hyper_path, REPO_DIR + "config/hyperparameters.json",
               "Path to hyperparameter config file");
@@ -56,7 +56,6 @@ void UpdateFrenetCoordinates(const Car& car, const utils::WayPoints& wp,
   fot_ic->yaw_c = car.getPose().yaw;
 
   Car car_f;
-  //基于当前车辆状态，将车辆状态转换为Frenet坐标系  
   utils::ToFrenet(car, wp, &car_f);
   fot_ic->s = car_f.getPose().x;
   fot_ic->s_d = car_f.getTwist().vx;
@@ -342,8 +341,8 @@ Pose EstimateChangeOfPoseV2(const Car& next_planning_state_local,
 // }
 
 int main(int argc, char** argv) {
-  //gflags::ParseCommandLineFlags(&argc, &argv, true);
   google::ParseCommandLineFlags(&argc, &argv, true);
+
   if (!InitFrenetHyperParameters()) {
     return 1;
   }

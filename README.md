@@ -52,7 +52,7 @@ Scenes are defined in `scenes/` folder. Three scenes (stop, two-lane, three-lane
 
 The view from the vehice local coordinate system is also available with candidate trajecotories in dashed blue lines. Each trajectory has the same planning horizion of 5.0 seconds. 
 
-| ![L2FrenetOptimalTrajectory Demo](results/multi_lanes/animation_s.gif) | ![L2FrenetOptimalTrajectory Demo](results/multi_lanes/animation_local_s.gif)  |
+| ![L2FrenetOptimalTrajectory Demo](results/auto_merge/animation.gif) | ![L2FrenetOptimalTrajectory Demo](results/auto_merge/animation_local.gif)  |
 |:-------------------------:|:-------------------------:|
 | Global View   | Local View  | 
 
@@ -66,6 +66,8 @@ To enable threading, specify the number of threads you want to use for `num_thre
 
 #### c++ version standalone
 
+> 需要注意修改文件路径，否则会报错
+
 ```
 ./build/FrenetOptimalTrajectoryTest --scene_path=/home/echo/Project/l2_frenet_planner/config/scenes/multi_lanes.json --hyper_path=/home/echo/Project/l2_frenet_planner/config/hyperparameters.json --store_data=true --data_path=/home/echo/Project/l2_frenet_planner/build/data.bin --local_planning=true
 ```
@@ -74,6 +76,12 @@ To enable threading, specify the number of threads you want to use for `num_thre
 ```
 ./build/FrenetOptimalTrajectoryComTest --scene_path=/home/echo/Project/l2_frenet_planner/config/scenes/multi_lanes.json --hyper_path=/home/echo/Project/l2_frenet_planner/config/hyperparameters.json --store_data=true --data_path=/home/echo/Project/l2_frenet_planner/build/data.bin --local_planning=true
 ```
+
+### 关于匝道入主路的强制换道
+
+1. 利用 config 场景初步增加场景，已经初步实现这类决策
+2. **需要注意此代码 debug 编译不报错，但是 release 编译会报错，需要解决**
+
 
 ### Citation
 
